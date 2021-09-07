@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        h1{
+            display:flex;
+            justify-content: center
+        }
+        div{
+            display:flex;
+            justify-content: center
+        }
+    </style>
+</head>
+<body>
+    <h1>Web Calculator</h1>
+    <div>
+        <form action="/operation" method="post"> {% csrf_token %}
+            <h2>Provide Data:</h2>
+            <br>
+            <label for="input">Number1:</label>
+            <input type="text" name="text1" class="input" placeholder="number only">
+            <br>
+            <label for="input1">Number2:</label>
+            <input type="text" name="text2" class="input"placeholder="number only">
+            <br>
+            <h2>Choose Operation:</h2>
+            <br>
+            <input type="radio" name="operator1" id="operator">+
+            <input type="radio" name="operator2" id="operator">-
+            <input type="radio" name="operator3" id="operator">/
+            <input type="radio" name="operator4" id="operator">*<br>
+            <button type="submit">Calculate</button>
+        </form>
+        {% block content %}
+
+        {% endblock %}
+
+    </div>
+</body>
+</html>
